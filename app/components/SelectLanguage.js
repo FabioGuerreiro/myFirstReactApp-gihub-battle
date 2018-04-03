@@ -1,8 +1,8 @@
-var React = require('react');
-var PropTypes = require('prop-types');
+const React = require('react');
+const PropTypes = require('prop-types');
 
 const SelectLanguage = (props) => {
-	var languages = ['All', 'JavaScript', 'TypeScript', 'CSS', 'Java', 'Python'];
+	const languages = ['All', 'JavaScript', 'TypeScript', 'CSS', 'Java', 'Python'];
 
 	return(
 		<ul className='languages'>
