@@ -2,7 +2,7 @@ const React = require('react');
 const NavLink = require('react-router-dom').NavLink;
 
 const Nav = () => (
-	<ul class='nav'>
+	<ul className='nav'>
 		<li>
 			<NavLink exact activeClassName='active' to='/'>
                 Home
