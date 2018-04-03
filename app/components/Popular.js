@@ -4,55 +4,55 @@ var RepoGrid = require('./RepoGrid');
 var api = require('../utils/api');
 
 class Popular extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            selectedLanguage: 'All',
-            repos: null
-        };
+	constructor(props) {
+		super(props);
+		this.state = {
+			selectedLanguage: 'All',
+			repos: null
+		};
 
-        this.updateLanguage = this.updateLanguage.bind(this);
-    }
+		this.updateLanguage = this.updateLanguage.bind(this);
+	}
 
-    componentDidMount() {
-        this.updateLanguage(this.state.selectedLanguage);
-    }
+	componentDidMount() {
+		this.updateLanguage(this.state.selectedLanguage);
+	}
 
-    updateLanguage(lang) {
-        this.setState(() => {
-            return {
-                selectedLanguage: lang,
-                repos: null
-            }
-        });
+	updateLanguage(lang) {
+		this.setState(() => {
+			return {
+				selectedLanguage: lang,
+				repos: null
+			};
+		});
 
         
-        api.fetchPopularRepos(lang)
-            .then((repos) => {
-                this.setState(() => {
-                    return {
-                        repos: repos
-                    }
-                });
-            });
-    }
+		api.fetchPopularRepos(lang)
+			.then((repos) => {
+				this.setState(() => {
+					return {
+						repos: repos
+					};
+				});
+			});
+	}
 
-    render() {
-        return (
-            <div>
-                <SelectLanguage 
-                    selectedLanguage={this.state.selectedLanguage}
-                    onSelect={this.updateLanguage}
-                />
-                {!this.state.repos
-                    ? <p>LOADING</p>
-                    : <RepoGrid
-                        repos={this.state.repos}
-                        />
-                }
-            </div>
-        )
-    }
+	render() {
+		return (
+			<div>
+				<SelectLanguage 
+					selectedLanguage={this.state.selectedLanguage}
+					onSelect={this.updateLanguage}
+				/>
+				{!this.state.repos
+					? <p>LOADING</p>
+					: <RepoGrid
+						repos={this.state.repos}
+					/>
+				}
+			</div>
+		);
+	}
 }
 
 module.exports = Popular;
