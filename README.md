@@ -9,3 +9,6 @@ The main differences here are: SASS for styling, ES6 and inclusion of ESLint.
 npm install
 npm start
 ```
+
+# toDo
+This is still not as intendend as I want to include redux to handle the states.
