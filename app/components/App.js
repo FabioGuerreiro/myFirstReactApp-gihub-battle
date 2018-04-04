@@ -6,10 +6,10 @@ const Switch = ReactRouter.Switch;
 const NavLink = ReactRouter.NavLink;
 
 const Nav = require('./Nav');
-const Home = require('./Home');
-const Battle = require('./Battle');
-const Popular = require('./Popular');
-const Results = require('./Results');
+const Home = require('./pages/Home');
+const Battle = require('./pages/Battle');
+const Popular = require('./pages/Popular');
+const Results = require('./pages/Results');
 
 class App extends React.Component {
 	render() {

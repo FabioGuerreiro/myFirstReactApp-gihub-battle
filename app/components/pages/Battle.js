@@ -1,7 +1,8 @@
 const React = require('react');
 const Link = require('react-router-dom').Link;
-const PlayerInput = require('./PlayerInput');
-const PlayerPreview = require('./PlayerPreview');
+
+const PlayerInput = require('../players/PlayerInput');
+const PlayerPreview = require('../players/PlayerPreview');
 
 class Battle extends React.Component {
 	constructor(props) {
@@ -21,8 +22,8 @@ class Battle extends React.Component {
 	handleSubmit(id, username) {
 		this.setState(() => {
 			const newState = {};
-			newState[id + 'Name'] = username;
-			newState[id + 'Image'] = 'https://github.com/' + username +'.png?size=200';
+			newState[`${id}Name`] = username;
+			newState[`${id}Image`] = `https://github.com/${username}.png?size=200`;
 			return newState;
 		});
 	}
@@ -30,8 +31,8 @@ class Battle extends React.Component {
 	handleReset(id) {
 		this.setState(() => {
 			const newState = {};
-			newState[id + 'Name'] = '';
-			newState[id + 'Image'] = null;
+			newState[`${id}Name`] = '';
+			newState[`${id}Image`] = null;
 			return newState;
 		});
 	}

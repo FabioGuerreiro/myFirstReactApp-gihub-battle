@@ -1,9 +1,10 @@
 const React = require('react');
 const queryString = require('query-string');
 const Link = require('react-router-dom').Link;
-const api = require('../utils/api');
+const api = require('../../utils/api');
 
-const Player = require('./Player');
+const Player = require('../players/Player');
+const Loading = require('../Loading');
 
 class Results extends React.Component {
 	constructor(props) {
@@ -49,7 +50,7 @@ class Results extends React.Component {
 		let loading = this.state.loading;
 
 		if(loading === true) {
-			return <p>Loading</p>;
+			return <Loading />;
 		}
 
 		if(error) {
